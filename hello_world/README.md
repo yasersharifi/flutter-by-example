@@ -40,6 +40,14 @@ This is a basic Flutter application that displays "Hello World" on the screen us
 
 ## Preview
 
-<div style="max-width: 300px">
-  <img src="preview.png" alt="Hello World by flutter">
+<div style="display: flex;gap: 16px;flex-wrap:wrap">
+  <div style="max-width: 300px;display: flex;flex-direction:column;align-items:center;">
+    <h5>Android</h5>
+    <img src="preview.png" alt="Hello World by flutter">
+  </div>
+
+  <div style="max-width: 300px;display: flex;flex-direction:column;align-items:center;">
+    <h5>IOS</h5>
+    <img src="preview-ios.png" alt="Hello World by flutter">
+  </div>
 </div>
