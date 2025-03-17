@@ -3,8 +3,10 @@ import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grocery_store/ui/core/themes/my_theme.dart';
 import 'package:grocery_store/ui/data/categories_data.dart';
+import 'package:provider/provider.dart';
 
-import 'Category_box.dart';
+import '../../../categories/screens/widgets/Category_box.dart';
+import '../../../categories/view_model/category_view_model.dart';
 
 class HomeCategories extends StatefulWidget {
   const HomeCategories({super.key});
@@ -14,11 +16,21 @@ class HomeCategories extends StatefulWidget {
 }
 
 class _HomeCategoriesState extends State<HomeCategories> {
-  final List<Category> _categories = Categories().categories.cast<Category>();
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+    final viewModel = Provider.of<CategoryViewModel>(context);
+
+    if (viewModel.isLoading) {
+      return Center(child: CircularProgressIndicator());
+    } else if (viewModel.error != null) {
+      return Container(); // Not show anything
+    } else if (viewModel.categories == null) {
+      return Container(); // Not show anything
+    }
+
+    final categories = viewModel.categories;
 
     return Column(
       children: [
@@ -68,7 +80,7 @@ class _HomeCategoriesState extends State<HomeCategories> {
             pageSnapping: true,
           ),
           items:
-              _categories.map((category) {
+              categories.map((category) {
                 return Builder(
                   builder: (BuildContext context) {
                     return CategoryBox(

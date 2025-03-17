@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Category {
-  final String label;
-  final String imagePath;
+  final String title;
+  final String image;
   final Color? bgColors;
 
   Category({
-    required this.label,
-    required this.imagePath,
+    required this.title,
+    required this.image,
     this.bgColors = Colors.grey,
   });
 }
@@ -15,38 +15,38 @@ class Category {
 class Categories {
   final List<Category> _categories = [
     Category(
-      label: 'Vegetables',
-      imagePath: 'assets/categories/vegetables.svg',
+      title: 'Vegetables',
+      image: 'assets/categories/vegetables.svg',
       bgColors: Colors.green[50],
     ),
     Category(
-      label: 'Fruits',
-      imagePath: 'assets/categories/fruits.svg',
+      title: 'Fruits',
+      image: 'assets/categories/fruits.svg',
       bgColors: Colors.red[50],
     ),
     Category(
-      label: 'Beverages',
-      imagePath: 'assets/categories/beverage.svg',
+      title: 'Beverages',
+      image: 'assets/categories/beverage.svg',
       bgColors: Colors.orange[50],
     ),
     Category(
-      label: 'Grocery',
-      imagePath: 'assets/categories/grocery.svg',
+      title: 'Grocery',
+      image: 'assets/categories/grocery.svg',
       bgColors: Colors.purple[50],
     ),
     Category(
-      label: 'Edible oil',
-      imagePath: 'assets/categories/oil.svg',
+      title: 'Edible oil',
+      image: 'assets/categories/oil.svg',
       bgColors: Colors.blue[50],
     ),
     Category(
-      label: 'Household',
-      imagePath: 'assets/categories/vacuum.svg',
+      title: 'Household',
+      image: 'assets/categories/vacuum.svg',
       bgColors: Colors.pink[50],
     ),
     Category(
-      label: 'Baby care',
-      imagePath: 'assets/categories/baby_care.svg',
+      title: 'Baby care',
+      image: 'assets/categories/baby_care.svg',
       bgColors: Colors.blue[50],
     ),
   ];

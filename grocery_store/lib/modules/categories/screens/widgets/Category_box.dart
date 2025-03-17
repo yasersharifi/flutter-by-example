@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grocery_store/modules/categories/models/category_model.dart';
 import 'package:grocery_store/ui/core/themes/my_theme.dart';
 
-import '../data/categories_data.dart';
+import '../../../../ui/data/categories_data.dart';
 
 class CategoryBox extends StatelessWidget {
   const CategoryBox({
@@ -14,7 +15,7 @@ class CategoryBox extends StatelessWidget {
     this.imageSize = 66,
   });
 
-  final Category category;
+  final CategoryModel category;
   final double width;
   final double height;
   final double imageContainerSize;
@@ -40,8 +41,8 @@ class CategoryBox extends StatelessWidget {
               child: SizedBox(
                 height: imageSize,
                 child: SvgPicture.asset(
-                  category.imagePath,
-                  semanticsLabel: '${category.label} Logo',
+                  category.image,
+                  semanticsLabel: '${category.title} Logo',
                 ),
               ),
             ),
@@ -51,7 +52,7 @@ class CategoryBox extends StatelessWidget {
 
           // Label
           Text(
-            category.label,
+            category.title,
             style: TextStyle(
               fontSize: 10,
               color: MyTheme.textGray,
